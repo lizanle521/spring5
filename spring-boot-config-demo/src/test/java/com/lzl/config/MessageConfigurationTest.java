@@ -21,7 +21,7 @@ public class MessageConfigurationTest {
     @Test
     public void testScanPackages() throws Exception {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        ctx.scan("com.lzl.config");
+        ctx.scan("com.lzl.config.config");
         ctx.refresh();
         assertEquals("message configuration", ctx.getBean("message"));
     }
