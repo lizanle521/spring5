@@ -1,0 +1,17 @@
+swagger:
+  enabled: true #开启swagger
+  title: swagger的标题
+  description: swagger的描述
+  version:  swagger的版本
+  license:  swagger的许可证
+  license-url: swagger的许可证地址
+  terms-of-service-url: 服务条款url
+  contact:
+    name: 维护人姓名
+    email: 维护人邮箱
+    url: 维护人url
+  base-package: swagger的扫描包
+  base-path: 需要处理的基础URL规则
+book:
+  author: lizanle
+  name: spring book

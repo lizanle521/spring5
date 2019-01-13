@@ -14,6 +14,7 @@
         <module>spring5-demo</module>
         <module>helloword</module>
         <module>configurationpropertiesdemo</module>
+        <module>spring-boot-config-demo</module>
     </modules>
 
 
