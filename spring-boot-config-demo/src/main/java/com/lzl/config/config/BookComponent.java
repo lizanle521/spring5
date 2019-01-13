@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
  */
 @Component
 @ConfigurationProperties(prefix = "book")
-@Validated
+//@Validated 一般不这么做
 public class BookComponent {
 
     @NotEmpty
