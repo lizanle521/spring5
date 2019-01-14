@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring5</artifactId>
+        <groupId>com.lzl</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-boot-externalized-configuration-order</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 只有开发的时候用，会自动禁用缓存，请看 DevToolsPropertyDefaultsPostProcessor 这个类 -->
+        <!-- 在类路径下的文件变更的时候，能够自动重启，静态资源和 可视化模版 改变不需要重启 -->
+        <!-- SpringApplication.setRegisterShutdownHook(false) 被设置了的话，自动重启就不顶用了 -->
+        <!-- spring-boot, spring-boot-devtools, spring-boot-autoconfigure, spring-boot-actuator, and spring-boot-starter. 等项目会被忽略而不能自动重启-->
+        <!-- ResourceLoader 将会被定制化，这个类是被applicationContext使用的，如果已经存在一个applicationContext,那么它将会被包装，因为直接覆盖getResources方法是不支持的 -->
+        <!-- 重启的技术原理 是 springboot提供了两个classloader,一个加载第三方jar等不不变的类。一个是加载应用类。
+            重启的时候丢弃应用类加载器并且创建一个新的。
+         -->
+        <!-- 利用 属性 spring.devtools.restart.exclude=static/**,public/** ，那么更改 static 或者 public 将会引发重启 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- 测试依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
