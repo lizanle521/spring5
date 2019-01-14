@@ -20,6 +20,8 @@
         <module>spring-boot-webflux</module>
         <module>spring-boot-failure-analyzer</module>
         <module>spring-boot-events-listeners</module>
+        <module>spring-boot-context-use</module>
+        <module>spring-boot-externalized-configuration-order</module>
     </modules>
 
 
@@ -60,20 +62,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- 只有开发的时候用，会自动禁用缓存，请看 DevToolsPropertyDefaultsPostProcessor 这个类 -->
-            <!-- 在类路径下的文件变更的时候，能够自动重启，静态资源和 可视化模版 改变不需要重启 -->
-            <!-- SpringApplication.setRegisterShutdownHook(false) 被设置了的话，自动重启就不顶用了 -->
-            <!-- spring-boot, spring-boot-devtools, spring-boot-autoconfigure, spring-boot-actuator, and spring-boot-starter. 等项目会被忽略而不能自动重启-->
-            <!-- ResourceLoader 将会被定制化，这个类是被applicationContext使用的，如果已经存在一个applicationContext,那么它将会被包装，因为直接覆盖getResources方法是不支持的 -->
-            <!-- 重启的技术原理 是 springboot提供了两个classloader,一个加载第三方jar等不不变的类。一个是加载应用类。
-                重启的时候丢弃应用类加载器并且创建一个新的。
-             -->
-            <!-- 利用 属性 spring.devtools.restart.exclude=static/**,public/** ，那么更改 static 或者 public 将会引发重启 -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-devtools</artifactId>
-                <optional>true</optional>
-            </dependency>
+
         </dependencies>
 
     </dependencyManagement>
