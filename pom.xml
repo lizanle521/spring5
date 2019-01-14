@@ -18,6 +18,8 @@
         <module>spring-boot-dubbo-server</module>
         <module>spring-boot-dubbo-client</module>
         <module>spring-boot-webflux</module>
+        <module>spring-boot-failure-analyzer</module>
+        <module>spring-boot-events-listeners</module>
     </modules>
 
 
