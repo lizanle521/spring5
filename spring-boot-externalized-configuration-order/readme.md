@@ -40,3 +40,7 @@ files in the following locations and adds them to the Spring Environment:
 2. The current directory
 3. A classpath /config package
 4. The classpath root
+
+spring.config.name and spring.config.location are used very early to determine 
+which files have to be loaded, so they must be defined as an environment property 
+(typically an OS environment variable, a system property, or a command-line argument).
