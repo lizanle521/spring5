@@ -7,6 +7,7 @@ Property values can be injected directly into your beans by using the @Value ann
 
 Spring Boot uses a very particular PropertySource order that is designed to allow 
 sensible overriding of values. Properties are considered in the following order:
+### 配置优先级 
 
 1. Devtools global settings properties on your home directory (~/.spring-boot-devtools.properties when devtools is active).
 2. @TestPropertySource annotations on your tests.
@@ -29,3 +30,13 @@ sensible overriding of values. Properties are considered in the following order:
 #### dev-tools 配合自动编译实现热部署
 - “File” -> “Settings” -> “Build,Execution,Deplyment” -> “Compiler”，选中打勾 “Build project automatically” 。
 - 组合键：“command + shift + a” ，选择 “Registry” ，选中打勾 “compiler.automake.allow.when.app.running” 。
+
+### 配置文件起作用的地方 
+
+SpringApplication loads properties from application.properties 
+files in the following locations and adds them to the Spring Environment:
+
+1. A /config subdirectory of the current directory
+2. The current directory
+3. A classpath /config package
+4. The classpath root
