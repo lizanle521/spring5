@@ -1,0 +1,18 @@
+#server:
+#  address: 192.168.1.100
+#---
+#spring:
+#  profiles: development
+#server:
+#  address: 127.0.0.1
+#  port: 8081
+#---
+#spring:
+#  profiles: production
+#server:
+#  address: 192.168.1.120
+#
+#### 多个profile 可以用 ---隔开，然后用 spring.profiles 指明环境
+#---
+#spring:
+#  profiles: development
