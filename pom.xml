@@ -22,6 +22,9 @@
         <module>spring-boot-events-listeners</module>
         <module>spring-boot-context-use</module>
         <module>spring-boot-externalized-configuration-order</module>
+        <module>spring-boot-multi-profile</module>
+        <module>spring-boot-mvc-autoconfiguration</module>
+        <module>spring-mvc-autoconfiguration-test</module>
     </modules>
 
 
