@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestArgResolverController {
 
     @RequestMapping("/arg")
-    public String arg( PlatformSession<Long> platformSession, String s){
+    public String arg( @MyAnnotation PlatformSession<Long> platformSession){
         return platformSession.getUserName();
     }
 }
