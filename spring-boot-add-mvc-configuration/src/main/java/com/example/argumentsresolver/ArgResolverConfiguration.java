@@ -24,26 +24,10 @@ public class ArgResolverConfiguration implements WebMvcConfigurer {
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
         System.out.println("addArgumentResolvers");
-        resolvers.add(handlerMethodArgumentResolver());
+        resolvers.add(new MyHandlerMethodArgumentResolver());
         for (HandlerMethodArgumentResolver resolver : resolvers) {
             System.out.println(resolver.getClass().getName());
         }
     }
 
-    @Bean
-    public HandlerMethodArgumentResolver handlerMethodArgumentResolver(){
-        System.out.println("handle method arg");
-        return new HandlerMethodArgumentResolver() {
-            @Override
-            public boolean supportsParameter(MethodParameter parameter) {
-                return true;
-            }
-
-            @Override
-            public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
-                HttpServletRequest request = webRequest.getNativeRequest(HttpServletRequest.class);
-                return PlatformSessionUtil.getSession(request);
-            }
-        };
-    }
 }
