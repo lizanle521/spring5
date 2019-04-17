@@ -26,6 +26,8 @@
         <module>spring-boot-mvc-autoconfiguration</module>
         <module>spring-mvc-autoconfiguration-test</module>
         <module>spring-boot-add-mvc-configuration</module>
+        <module>my-spring-boot-starter</module>
+        <module>use-my-spring-boot-starter</module>
     </modules>
 
 

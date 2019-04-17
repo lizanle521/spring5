@@ -23,4 +23,18 @@
 
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- 把编译的类 和 依赖jar包 打包在一起  -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>controller.Example</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
