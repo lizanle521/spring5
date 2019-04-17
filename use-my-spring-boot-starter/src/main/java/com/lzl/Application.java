@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date 2019/4/17 11:29
  */
 @SpringBootApplication
-@ImportAutoConfiguration({AuthorAutoConfig.class})
+// @ImportAutoConfiguration({AuthorAutoConfig.class}) 也可以这样自动配置而不用spring.factories文件
 public class Application implements CommandLineRunner {
     @Autowired
     private MyService myService;
