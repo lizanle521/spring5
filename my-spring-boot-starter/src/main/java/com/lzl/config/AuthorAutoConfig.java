@@ -23,6 +23,10 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(AuthorProperties.class)
 public class AuthorAutoConfig {
 
+    public AuthorAutoConfig() {
+        System.out.println("init");
+    }
+
     @Autowired
     private AuthorProperties authorProperties;
     /**

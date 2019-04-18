@@ -28,6 +28,7 @@
         <module>spring-boot-add-mvc-configuration</module>
         <module>my-spring-boot-starter</module>
         <module>use-my-spring-boot-starter</module>
+        <module>spring-boot-hystrix-demo</module>
     </modules>
 
 
