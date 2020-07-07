@@ -25,4 +25,6 @@ public class CityRouter {
                 .and(RequestPredicates.accept(MediaType.TEXT_PLAIN)),cityHandler::helloCity);
     }
 
+
+
 }

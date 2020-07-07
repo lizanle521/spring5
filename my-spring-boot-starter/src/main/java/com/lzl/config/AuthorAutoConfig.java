@@ -3,13 +3,14 @@ package com.lzl.config;
 import com.lzl.entity.Author;
 import com.lzl.property.AuthorProperties;
 import com.lzl.service.MyService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import javax.annotation.Resource;
 
 /**
  * 自动装备类
@@ -27,7 +28,7 @@ public class AuthorAutoConfig {
         System.out.println("init");
     }
 
-    @Autowired
+    @Resource
     private AuthorProperties authorProperties;
     /**
      * @ConditionalOnBean:当容器中有指定的Bean的条件下

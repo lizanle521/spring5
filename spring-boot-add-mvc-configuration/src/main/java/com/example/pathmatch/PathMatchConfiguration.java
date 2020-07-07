@@ -1,6 +1,7 @@
 package com.example.pathmatch;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -25,5 +26,10 @@ public class PathMatchConfiguration implements WebMvcConfigurer {
          * 也就是说, "/user" 和 "/user/" 都会匹配到 "/user"的Controller
          */
         configurer.setUseTrailingSlashMatch(true);
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        System.out.println("xxxx");
     }
 }
